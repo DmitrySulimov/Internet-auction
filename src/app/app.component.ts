@@ -1,4 +1,10 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
+
+import 'clarity-icons';
+import 'clarity-icons/shapes/essential-shapes';
+import 'clarity-icons/shapes/technology-shapes';
 
 @Component({
   selector: 'app-root',
