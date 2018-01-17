@@ -1,4 +1,22 @@
+.application{
+	display: grid;
+	grid-template-rows: 60px 1fr 80px;
+}
 .main{
 	display: grid;
-	
+	grid-template-columns: 300px 3fr;
+}
+.sidebar_menu{
+	grid-area: 1 / 1 / 2 / 2;
+	border-right: solid 1px  #002538;
+	border-bottom: solid 1px  #002538;
+	padding: 5px;
+}
+.content{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+footer{
+	text-align: center;
 }

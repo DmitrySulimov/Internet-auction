@@ -1,47 +1,80 @@
-<header class="header-6">
-       <div class="header-nav">
-            <a href="..." class="nav-link nav-icon">
-                <clr-icon shape="bars"></clr-icon>
+<div class="application">
+    <header class="header-6">
+           <div class="header-nav">
+                <a (click)="select()" class="nav-link nav-icon">
+                    <clr-icon shape="bars"></clr-icon>
+                </a>
+            </div>
+        <div class="branding">
+            <a routerLink="home" class="nav-link">
+                <clr-icon shape="savings"></clr-icon>
+                <span class="title">Internet Auction</span>
             </a>
         </div>
-    <div class="branding">
-        <a href="..." class="nav-link">
-            <clr-icon shape="savings"></clr-icon>
-            <span class="title">Internet Auction</span>
-        </a>
-    </div>
-    <div class="header-nav">
-        <a href="..." class="nav-link nav-icon">
-            <clr-icon shape="home"></clr-icon>
-        </a>
-        <a href="..." class="nav-link nav-icon">
-            <clr-icon shape="store"></clr-icon>
-        </a>
-    </div>
-    <form class="search">
-        <label for="search_input">
-            <input id="search_input" type="text" placeholder="Search for keywords...">
-        </label>
-    </form>
-    <div class="header-actions">
-        <clr-dropdown>
-            <button class="nav-icon" clrDropdownTrigger>
-                <clr-icon shape="user"></clr-icon>
-                <clr-icon shape="caret down"></clr-icon>
-            </button>
-            <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
-                <a href="..." clrDropdownItem>About</a>
-                <a href="..." clrDropdownItem>Preferences</a>
-                <a href="..." clrDropdownItem>Log out</a>
-            </clr-dropdown-menu>
-        </clr-dropdown>
-    </div>
-</header>
-<div class="main">
-    <div class="sidebar_menu">
-
-    </div>
-    <div class="content">
-    </div>
+        <div class="header-nav">
+            <a routerLink="lots" class="nav-link nav-icon">
+                <clr-icon shape="store"></clr-icon>
+            </a>
+            <a routerLink="contacts" class="nav-link nav-icon">
+                <clr-icon shape="info-standard"></clr-icon>
+            </a>
+        </div>
+        <form class="search">
+            <label for="search_input">
+                <input id="search_input" type="text" placeholder="Search for keywords...">
+            </label>
+        </form>
+        <div class="header-actions">
+            <clr-dropdown>
+                <button class="nav-icon" clrDropdownTrigger>
+                    <clr-icon shape="user"></clr-icon>
+                    <clr-icon shape="caret down"></clr-icon>
+                </button>
+                <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
+                    <a (click)="redirectTo()"  clrDropdownItem>home</a>
+                    <a routerLink="authentification" clrDropdownItem>Log in</a>
+                </clr-dropdown-menu>
+            </clr-dropdown>
+        </div>
+    </header>
+    <section class="main">
+        <div *ngIf="boo" class="sidebar_menu">
+            <form class="compact">
+                <section class="form-block">
+                    <label>A Form</label>
+                    <div class="form-group">
+                        <label for="aForm_1">This is a form field</label>
+                        <input type="text" id="aForm_1" placeholder="Enter value here" size="45">
+                    </div>
+                    <div class="form-group">
+                        <label for="aForm_2">Another form field</label>
+                        <input type="password" id="aForm_2" placeholder="Enter another value here" size="35">
+                    </div>
+                    <div class="form-group">
+                        <label for="aForm_3">A select box</label>
+                        <div class="select">
+                            <select id="aForm_3">
+                                <option>Option 1</option>
+                                <option>Option 2</option>
+                                <option>Option 3</option>
+                                <option>Option 4</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="aForm_4">Textarea</label>
+                        <textarea id="aForm_4" rows="5"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Button</button>
+                </section>
+            </form>
+        </div>
+        <div class="content">
+        <router-outlet></router-outlet>
+        </div>
+    </section>
+    <footer>
+    <p>&copy; Sulimov Dmitry 2018</p>
+    </footer>
 </div>
 

@@ -25,6 +25,7 @@
     "@clr/icons": "^0.11.0",
     "@clr/ui": "^0.11.0",
     "@webcomponents/custom-elements": "^1.0.0",
+    "angular-in-memory-web-api": "^0.5.2",
     "bootstrap": "4.0.0-beta.2",
     "clarity-icons": "^0.10.22",
     "core-js": "^2.4.1",

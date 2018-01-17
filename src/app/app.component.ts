@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 
@@ -12,12 +12,21 @@ import 'clarity-icons/shapes/commerce-shapes';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'app';
-  isSelected = false;
+  boo: boolean = false;
 
-  Select(boo){
-  boo = !boo;
-  return boo;
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+  select() {
+  this.boo = !this.boo;
+  return this.boo;
+  }
+  
+  redirectTo() {
+  console.log("check is user exist and if exist - redirect to user's chacked role page");
   }
 }
