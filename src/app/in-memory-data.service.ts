@@ -1,7 +1,9 @@
-import { Lot } from './domain/lot';
+import { InMemoryDbService } from 'angular-in-memory-web-api';
 
-export const LOTS: Lot[] = [
-	{
+export class InMemoryDataService implements InMemoryDbService {
+  createDb() {
+    const lots = [
+      {
 	id: 1,
 	name: "Asus R512",
 	currentPrice: 230,
@@ -71,4 +73,41 @@ export const LOTS: Lot[] = [
 	subCategory: "iphone",
 	description: "Alot information about different features"
 	}
-];
+    ];
+
+    const users = [
+      {	
+		id: 1,
+		username: "admin",
+		firstname: "Dmitry",
+		lastname: "Sulimov",
+		email: "sulimovdmitryvnua@gmail.com",
+		password: "Password",
+		phone: "0632791303",
+		isAdmin: true,
+		currentBalance: 10000
+		},
+		{	
+		id: 2,
+		username: "user1",
+		email: "user1@gmail.com",
+		password: "Password",
+		phone: "0632791301",
+		isAdmin: false,
+		currentBalance: 0
+		},
+		{	
+		id: 3,
+		username: "user2",
+		firstname: "Dmitry",
+		lastname: "Sulimov",
+		email: "user2@gmail.com",
+		password: "Password",
+		phone: "0632791302",
+		isAdmin: false,
+		currentBalance: 200
+		}
+    ];
+    return {lots, users};
+  }
+}

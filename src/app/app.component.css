@@ -4,7 +4,11 @@
 }
 .main{
 	display: grid;
-	grid-template-columns: 300px 3fr;
+	grid-template-columns: 1fr;
+}
+.mainWithSidebar{
+	display: grid;
+	grid-template-columns: 300px 1fr;
 }
 .sidebar_menu{
 	grid-area: 1 / 1 / 2 / 2;
@@ -15,7 +19,10 @@
 .content{
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-rows: 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr ;
+}
+app-authentification{
+	grid-area: 1 / 2 / 4 / 4;
 }
 footer{
 	text-align: center;

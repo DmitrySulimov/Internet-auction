@@ -1,3 +1,29 @@
-<p>
-  registration works!
-</p>
+   <h2>Register</h2>
+    <form name="form" (ngSubmit)="f.form.valid && addUser()" #f="ngForm">
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control" name="firstName" size="35" [(ngModel)]="regUser.firstName" required />
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" class="form-control" name="lastName" size="35" [(ngModel)]="regUser.lastName" #lastName="ngModel" required />
+        </div>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" name="username" size="35" [(ngModel)]="regUser.username"  required />
+        </div>
+         <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" name="email" size="35" [(ngModel)]="regUser.email"  required />
+        </div>
+        <div class="form-group">
+            <label for="tel">Phone</label>
+            <input type="tel" class="form-control" name="tel" size="35" [(ngModel)]="regUser.phone" required />
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" name="password" size="35" [(ngModel)]="regUser.password" #password="ngModel" required />
+        </div>
+            <button class="btn btn-primary btn-block">Register</button>
+            <a routerLink="/authentification" class="btn btn-link btn-block">Cancel</a>
+    </form>

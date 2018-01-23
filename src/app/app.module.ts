@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService }  from './in-memory-data.service';
 
 import { ClarityModule } from "@clr/angular";
 
@@ -16,13 +19,19 @@ import { RegistrationComponent } from './auth/registration/registration.componen
 import { AuthentificationComponent } from './auth/authentification/authentification.component';
 import { FilteredLotsComponent } from './filtered-lots/filtered-lots.component';
 
+import { AuthentificationService } from './authentification.service';
+
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     ClarityModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+    InMemoryDataService, { dataEncapsulation: false }
+    )
   ],
   declarations: [
     AppComponent,
@@ -36,7 +45,7 @@ import { FilteredLotsComponent } from './filtered-lots/filtered-lots.component';
     AuthentificationComponent,
     FilteredLotsComponent
   ],
-  providers: [],
+  providers: [AuthentificationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
