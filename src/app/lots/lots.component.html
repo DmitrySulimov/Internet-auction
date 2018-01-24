@@ -1,3 +1,8 @@
-<p>
-  lots works!
-</p>
+<div *ngFor="let lot of lots" class="showLot">
+	<h1 id="name">{{lot.name}}</h1>
+	<h2 id="category">{{lot.category}}</h2>
+	<img src={{lot.lmg[0]}}>
+	<p>{{lot.currentPrice}} uah - {{lot.customer}}</p>
+	<input type="button" name="more" value="more" routerLink="lots/detail/{lot.id}">
+	<input type="button" name="check" value="check" >
+</div>

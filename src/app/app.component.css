@@ -16,13 +16,13 @@
 	border-bottom: solid 1px  #002538;
 	padding: 5px;
 }
-.content{
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-rows: 1fr ;
-}
 app-authentification{
-	grid-area: 1 / 2 / 4 / 4;
+	grid-area: 1 / 2 / 2 / 3;
+}
+app-contacts{
+	grid-area: 1 / 1 / 2 / 4;
+}
+.content{
 }
 footer{
 	text-align: center;

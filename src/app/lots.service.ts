@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Lot } from './domain/lot';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 import {Observable} from 'rxjs/Rx';
 import 'rxjs/Rx';
 
 
-   const httpOptions = {
+const httpOptions = {
 	  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 	};
 
@@ -33,10 +34,9 @@ export class LotsService {
 
 
   deleteLot (lot: Lot | number): Observable<Lot> {
-  const id = typeof hero === 'number' ? lot : lot.id;
+  const id = typeof lot === 'number' ? lot : lot.id;
   const url = `${this.lotsUrl}/${id}`;
 
   return this.http.delete<Lot>(url, httpOptions)
   };
-
 }

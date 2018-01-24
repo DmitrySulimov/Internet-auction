@@ -1,3 +1,26 @@
-<p>
-  contacts works!
-</p>
+<h1>CONTACT US!</h1>
+<div class="hrefsAndMap">
+	<div class="hrefs">
+		<p>
+			<a href="https://www.linkedin.com/in/%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D1%81%D1%83%D0%BB%D0%B8%D0%BC%D0%BE%D0%B2-a5b708109/">
+				<i class="fa fa-linkedin fa-2x" aria-hidden="true"></i>
+				<span>LinkedIn</span>
+			</a>
+		</p>
+		<p>
+			<a href="http://telegram.me/sulimov_d">
+				<i class="fa fa-telegram fa-2x" aria-hidden="true"></i>
+				<span>telegramm</span>
+				</a>
+			</p>
+		<p>
+			<a href="mailto:sulimovdmitryvnua@gmail.com">
+				<i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i>
+				<span>mail</span>
+			</a>
+		</p>
+	</div>
+	<agm-map id="map" [latitude]="lat" [longitude]="lng">
+	 	<agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+	</agm-map>
+</div>
