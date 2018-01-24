@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import * as moment from 'moment';
 
 
 import 'clarity-icons';
@@ -15,6 +16,7 @@ import 'clarity-icons/shapes/commerce-shapes';
 export class AppComponent implements OnInit {
   title = 'app';
   boo: boolean = false;
+  date = moment().format('MM-DD-YYYY');
 
   constructor() { }
 

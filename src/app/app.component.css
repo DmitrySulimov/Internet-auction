@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400i');
 .application{
 	display: grid;
 	grid-template-rows: 60px 1fr 80px;
@@ -23,6 +24,10 @@ app-contacts{
 	grid-area: 1 / 1 / 2 / 4;
 }
 .content{
+}
+.time{
+	margin-left: 50px;
+	font-family: 'Roboto Condensed', sans-serif;
 }
 footer{
 	text-align: center;

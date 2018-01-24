@@ -1,1 +1,24 @@
-<h1>Home page is working</h1>
+<div class="wrapper">
+	<swiper class="swiper" [config]="config" [(index)]="index">
+		  <div class="swiper-slide">
+			<img src="/assets/img/s1.png">
+		  </div>
+		  <div class="swiper-slide">
+			<img src="/assets/img/s2.png">
+		  </div>
+		  <div class="swiper-slide">
+			<img src="/assets/img/s3.png">
+		  </div>
+	</swiper>
+</div>
+<p>HOT LOST!</p>
+<div class="content">
+	<div *ngFor="let lot of lots" class="showHotLots">
+		<h1 id="name">{{lot.name}}</h1>
+		<h2 id="category">{{lot.category}}</h2>
+		<img src={{lot.lmg[0]}}>
+		<p>{{lot.currentPrice}} uah - {{lot.customer}}</p>
+		<input type="button" name="more" value="more" routerLink="lots/detail/{lot.id}">
+		<input type="button" name="check" value="check" >
+	</div>	
+</div>
