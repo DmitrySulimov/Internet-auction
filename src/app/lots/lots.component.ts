@@ -1,4 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import {
+  CanActivate, Router,
+  ActivatedRouteSnapshot,
+  RouterStateSnapshot
+}                           from '@angular/router';
+import 'rxjs/add/operator/map';
+
+import { Lot } from '../domain/lot';
+import { LotsService } from '../lots.service';
+
+
 
 @Component({
   selector: 'app-lots',
@@ -7,9 +18,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LotsComponent implements OnInit {
 
-  constructor() { }
+ lots: Lot[];
+
+
+  constructor(private lotsService: LotsService,
+    private router: Router) { }
 
   ngOnInit() {
+    	this.getLots();
   }
 
+  getLots() : void {
+    this.lotsService
+    .getLots()
+    .subscribe((lots)=> { 
+    	this.lots = lots;
+    })
+} 
 }

@@ -11,14 +11,15 @@
 		  </div>
 	</swiper>
 </div>
-<p>HOT LOST!</p>
+<h1 class="labe">HOT LOTS!</h1>
 <div class="content">
-	<div *ngFor="let lot of lots" class="showHotLots">
-		<h1 id="name">{{lot.name}}</h1>
-		<h2 id="category">{{lot.category}}</h2>
-		<img src={{lot.lmg[0]}}>
-		<p>{{lot.currentPrice}} uah - {{lot.customer}}</p>
-		<input type="button" name="more" value="more" routerLink="lots/detail/{lot.id}">
-		<input type="button" name="check" value="check" >
+	<div *ngFor="let lot of lots" class="showHotLot">
+		<h3 class="name">{{lot.name}}</h3>
+		<div class="lot_img"  [ngStyle]="{'background-image': 'url(' + lot.img[0] + ')'}"></div>
+		<p class="price">Цена - {{lot.currentPrice}} uah</p>
+		<div class="buttons">
+			<button class="btn btn-block btn-primary" routerLink="lots/detail/{lot.id}">more</button>
+			<button class="btn btn-block btn-success">raise</button> 
+		</div>
 	</div>	
 </div>

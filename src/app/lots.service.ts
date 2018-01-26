@@ -7,6 +7,7 @@ import {Observable} from 'rxjs/Rx';
 import 'rxjs/Rx';
 
 
+
 const httpOptions = {
 	  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 	};
@@ -24,6 +25,11 @@ export class LotsService {
   getLots (): Observable<Lot[]> {
  	 return this.http.get<Lot[]>(this.lotsUrl);
 	 };
+
+
+   getHotLots (): Observable<Lot[]>{
+   return this.http.get<Lot[]>(this.lotsUrl);
+   };
 
 
 
