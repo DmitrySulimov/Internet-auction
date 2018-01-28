@@ -1,6 +1,6 @@
-<h1 class="labe">HOT LOTS!</h1>
+<h1 class="labe">LOTS!</h1>
 <div class="content">
-	<div *ngFor="let lot of lots" class="showHotLot">
+	<div *ngFor="let lot of pagedItems" class="showHotLot">
 		<h3 class="name">{{lot.name}}</h3>
 		<div class="lot_img"  [ngStyle]="{'background-image': 'url(' + lot.img[0] + ')'}"></div>
 		<p class="price">Цена - {{lot.currentPrice}} uah</p>
@@ -9,4 +9,17 @@
 			<button class="btn btn-block btn-success">raise</button> 
 		</div>
 	</div>	
+</div>
+<div class="pager">
+	 <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+        <li [ngClass]="{disabled:pager.currentPage === 1}">
+            <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+        </li>
+        <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+            <a (click)="setPage(page)">{{page}}</a>
+        </li>
+        <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+            <a (click)="setPage(pager.currentPage + 1)">Next</a>
+        </li>
+   </ul>
 </div>

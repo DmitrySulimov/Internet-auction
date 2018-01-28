@@ -24,15 +24,7 @@ export class AppComponent implements OnInit {
   }
 
   select() {
-  let mainSection = document.getElementById("mainSection");
-  if(this.boo){
-    mainSection.classList.add('main');
-    mainSection.classList.remove('mainWithSidebar');
-  }
-  else{
-    mainSection.classList.add('mainWithSidebar');
-    mainSection.classList.remove('main');
-  }
+
   this.boo = !this.boo;
   return this.boo;
   }

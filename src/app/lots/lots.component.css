@@ -15,7 +15,7 @@
 	margin: 0 20px;
 	max-width: 1150px;
 	display: grid;
-	grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
 	grid-gap: 10px 10px;
 }
 .name{
@@ -49,4 +49,8 @@
 }
 .buttons{
 	grid-area: 4 / 1 /5 / 4;
+}
+.pagination li a{
+    cursor: pointer;
+    text-decoration: none;
 }

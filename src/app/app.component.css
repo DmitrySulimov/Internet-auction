@@ -7,15 +7,25 @@
 	display: grid;
 	grid-template-columns: 1fr;
 }
-.mainWithSidebar{
-	display: grid;
-	grid-template-columns: 300px 1fr;
-}
 .sidebar_menu{
-	grid-area: 1 / 1 / 2 / 2;
 	border-right: solid 1px  #002538;
 	border-bottom: solid 1px  #002538;
 	padding: 5px;
+}
+.header-6{
+	position: fixed;
+	width: 100%;
+	z-index: 10;
+}
+app-sidebar{
+	z-index: 2;
+	position: fixed;
+	padding-top: 60px;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 300px;
+	background-color: white;
 }
 app-authentification{
 	grid-area: 1 / 2 / 2 / 3;

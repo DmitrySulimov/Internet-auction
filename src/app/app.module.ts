@@ -36,6 +36,8 @@ import { FilteredLotsComponent } from './filtered-lots/filtered-lots.component';
 
 import { AuthentificationService } from './authentification.service';
 import { LotsService } from './lots.service';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { PagerService } from './pager.service';
 
 
 @NgModule({
@@ -64,9 +66,10 @@ import { LotsService } from './lots.service';
     HomePageComponent,
     RegistrationComponent,
     AuthentificationComponent,
-    FilteredLotsComponent
+    FilteredLotsComponent,
+    SidebarComponent
   ],
-  providers: [AuthentificationService, LotsService, {provide: SWIPER_CONFIG, useValue: DEFAULT_SWIPER_CONFIG}],
+  providers: [AuthentificationService, LotsService, {provide: SWIPER_CONFIG, useValue: DEFAULT_SWIPER_CONFIG}, PagerService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
