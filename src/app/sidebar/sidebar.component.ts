@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { LotsService } from '../lots.service';
+import {
+  CanActivate, Router,
+  ActivatedRouteSnapshot,
+  RouterStateSnapshot
+}                           from '@angular/router';
+import { Lot } from '../domain/lot';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,9 +14,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private lotsService : LotsService, private router: Router) { }
 
   ngOnInit() {
+ 	this.getLots();
   }
+
+  lots: Lot[];
+
+  getLots() : void {
+    this.lotsService
+    .getLots()
+    .subscribe((lots)=> { 
+    	this.lots = lots;
+  	  })
+    };
+
 
 }

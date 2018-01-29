@@ -1,12 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Lot } from './domain/lot';
+
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 import {Observable} from 'rxjs/Rx';
 import 'rxjs/Rx';
-
-
 
 const httpOptions = {
 	  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -17,6 +16,7 @@ const httpOptions = {
 export class LotsService {
 
  private lotsUrl = 'api/lots';
+
 
 
   constructor(private http: HttpClient) { }
@@ -45,4 +45,8 @@ export class LotsService {
 
   return this.http.delete<Lot>(url, httpOptions)
   };
+
+
+ 
 }
+   

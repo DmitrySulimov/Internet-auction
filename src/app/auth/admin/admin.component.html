@@ -1,3 +1,37 @@
-<p>
-  admin works!
-</p>
+<clr-tabs>
+    <clr-tab>
+        <button clrTabLink>Dashboard</button>
+        <ng-template [(clrIfActive)]="dashboardActive">
+            <clr-tab-content>
+                ...
+            </clr-tab-content>
+        </ng-template>
+    </clr-tab>
+
+    <clr-tab>
+        <button clrTabLink>Management</button>
+        <ng-template [(clrIfActive)]="managementActive">
+            <clr-tab-content>
+                ...
+            </clr-tab-content>
+        </ng-template>
+    </clr-tab>
+
+    <clr-tab>
+        <button clrTabLink>Cloud</button>
+        <ng-template [(clrIfActive)]="cloudActive">
+            <clr-tab-content>
+                ...
+            </clr-tab-content>
+        </ng-template>
+    </clr-tab>
+
+    <clr-tab>
+        <button clrTabLink>Infrastructure</button>
+        <ng-template [(clrIfActive)]="infrastructureActive">
+            <clr-tab-content>
+                ...
+            </clr-tab-content>
+        </ng-template>
+    </clr-tab>
+</clr-tabs>

@@ -12,7 +12,10 @@
 	color: #ff3700;
 }
 .wrapper{
-	margin: 20px auto;
+	margin-top: 75px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 20px;
 	width: 720px;
 	height: 380px;
 }

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from './domain/user';
 
+
 import {Observable} from 'rxjs/Rx';
 import 'rxjs/Rx';
 
@@ -22,11 +23,6 @@ export class AuthentificationService {
 
    getUsers (): Observable<User[]> {
  	 return this.http.get<User[]>(this.usersUrl);
-	}
-
-   userExisted (username: string): Observable<User> {
-     const url = `${this.usersUrl}/${username}`;
- 	 return this.http.get<User>(url).filter(x => x.username === username);
 	}
 
 	getUser(id: number): Observable<User> {

@@ -1,5 +1,5 @@
    <h2>Register</h2>
-    <form name="form" (ngSubmit)="f.form.valid && addUser()" #f="ngForm">
+    <form name="form" (ngSubmit)="addUser()" #f="ngForm">
         <div class="form-group">
             <label for="firstName">First Name</label>
             <input type="text" class="form-control" name="firstName" size="35" [(ngModel)]="regUser.firstName" required />
@@ -24,6 +24,6 @@
             <label for="password">Password</label>
             <input type="password" class="form-control" name="password" size="35" [(ngModel)]="regUser.password" #password="ngModel" required />
         </div>
-            <button class="btn btn-primary btn-block">Register</button>
+            <button class="btn btn-primary btn-block" type="submit">Register</button>
             <a routerLink="/authentification" class="btn btn-link btn-block">Cancel</a>
     </form>

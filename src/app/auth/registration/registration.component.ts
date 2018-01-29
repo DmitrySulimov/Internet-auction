@@ -2,6 +2,12 @@ import { Component, OnInit } from '@angular/core';
 
 import { User } from '../../domain/user';
 import { AuthentificationService } from '../../authentification.service';
+import {
+  CanActivate, Router,
+  ActivatedRouteSnapshot,
+  RouterStateSnapshot
+}                           from '@angular/router';
+import 'rxjs/Rx';
 
 @Component({
   selector: 'app-registration',
@@ -25,7 +31,7 @@ export class RegistrationComponent implements OnInit {
     currentBalance: 0
   };
 
-  constructor(private authentificationService: AuthentificationService) {}
+  constructor(private authentificationService: AuthentificationService, private router: Router) {}
 
   ngOnInit() {
     this.getUsers();
@@ -38,12 +44,11 @@ export class RegistrationComponent implements OnInit {
   }
 
   addUser(regUser) : void{
-  	if(!(this.authentificationService.userExisted(this.regUser.username))){
-  		this.authentificationService.addUser(this.regUser as User)
+
+  this.authentificationService.addUser(this.regUser as User)
   		.subscribe(user => {
-  			this.users.push(user);
-  		})
+  			   this.users.push(user);
+      })
+      this.router.navigate(['/authentification']);
   	}
   }
-
-}

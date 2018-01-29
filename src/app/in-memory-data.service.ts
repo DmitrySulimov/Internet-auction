@@ -279,7 +279,7 @@ export class InMemoryDataService implements InMemoryDbService {
 	customer: "Rozetka UA",
 	totalCustomers: 6,
 	finishDate: 5,
-	category: "Notebook",
+	category: "notebook",
 	subCategory: "Acer",
 	description: "Alot information about different features"
 	},

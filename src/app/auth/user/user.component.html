@@ -1,3 +1,19 @@
-<p>
-  user works!
-</p>
+<clr-tabs>
+    <clr-tab>
+        <button clrTabLink>Dashboard</button>
+        <ng-template [(clrIfActive)]="dashboardActive">
+            <clr-tab-content>
+                ...
+            </clr-tab-content>
+        </ng-template>
+    </clr-tab>
+
+    <clr-tab>
+        <button clrTabLink>Management</button>
+        <ng-template [(clrIfActive)]="managementActive">
+            <clr-tab-content>
+                ...
+            </clr-tab-content>
+        </ng-template>
+    </clr-tab>
+</clr-tabs>
