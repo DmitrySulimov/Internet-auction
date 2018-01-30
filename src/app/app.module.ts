@@ -33,12 +33,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomePageComponent } from './home-page/home-page.component';
 import { RegistrationComponent } from './auth/registration/registration.component';
 import { AuthentificationComponent } from './auth/authentification/authentification.component';
-import { FilteredLotsComponent } from './filtered-lots/filtered-lots.component';
-
 import { AuthentificationService } from './authentification.service';
 import { LotsService } from './lots.service';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { PagerService } from './pager.service';
+import { ChangeLotComponent } from './change-lot/change-lot.component';
 
 
 @NgModule({
@@ -68,8 +67,8 @@ import { PagerService } from './pager.service';
     HomePageComponent,
     RegistrationComponent,
     AuthentificationComponent,
-    FilteredLotsComponent,
-    SidebarComponent
+    SidebarComponent,
+    ChangeLotComponent
   ],
   providers: [AuthentificationService, LotsService, {provide: SWIPER_CONFIG, useValue: DEFAULT_SWIPER_CONFIG}, PagerService ],
   bootstrap: [AppComponent]

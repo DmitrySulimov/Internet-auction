@@ -35,6 +35,7 @@ app-contacts{
 	grid-area: 1 / 1 / 2 / 4;
 }
 .content{
+	margin: 75px;
 }
 .time{
 	margin-left: 50px;

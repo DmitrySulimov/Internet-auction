@@ -16,4 +16,22 @@
             </clr-tab-content>
         </ng-template>
     </clr-tab>
+
+    <clr-tab>
+        <button clrTabLink>Cloud</button>
+        <ng-template [(clrIfActive)]="cloudActive">
+            <clr-tab-content>
+                ...
+            </clr-tab-content>
+        </ng-template>
+    </clr-tab>
+
+    <clr-tab>
+        <button clrTabLink>Infrastructure</button>
+        <ng-template [(clrIfActive)]="infrastructureActive">
+            <clr-tab-content>
+                ...
+            </clr-tab-content>
+        </ng-template>
+    </clr-tab>
 </clr-tabs>

@@ -37,4 +37,11 @@ export class AuthentificationService {
 	addUser(user : User): Observable<User>{
 		return this.http.post<User>(this.usersUrl, user, httpOptions);
 	}
+
+	deleteUser (user: User | number): Observable<User> {
+    const id = typeof user === 'number' ? user : user.id;
+    const url = `${this.usersUrl}/${id}`;
+ 
+    return this.http.delete<User>(url, httpOptions);
+  }
 }
