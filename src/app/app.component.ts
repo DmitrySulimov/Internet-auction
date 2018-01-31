@@ -28,8 +28,5 @@ export class AppComponent implements OnInit {
   this.boo = !this.boo;
   return this.boo;
   }
-  
-  redirectTo() {
-  console.log("check is user exist and if exist - redirect to user's chacked role page");
-  }
+
 }

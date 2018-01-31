@@ -7,6 +7,7 @@ import {
 
 import { User } from '../../domain/user';
 import { AuthentificationService } from '../../authentification.service';
+import { UtilityService } from '../../utility.service';
 
 @Component({
   selector: 'app-authentification',
@@ -20,12 +21,23 @@ export class AuthentificationComponent implements OnInit {
   password: string = "";
 
   constructor(private authentificationService: AuthentificationService,
-    private router: Router) {
+    private router: Router, private utility: UtilityService) {
   	  
   }
 
   ngOnInit() {
   	this.getUsers();
+    this.utility.isLogged().then((result: boolean) => {
+      if(result){
+        if(sessionStorage.getItem('User') === 'admin'){
+        console.log('trouble');
+          this.router.navigate(['/authentification/admin']);
+        }
+        else{
+          this.router.navigate(['/authentification/user/', sessionStorage.getItem('User')]);
+        }
+      }
+    })
   }
 
 
@@ -38,14 +50,16 @@ export class AuthentificationComponent implements OnInit {
   loggining(){
   for(let user of this.users){
     if(user.username == this.username && user.password == this.password){
-      if(user.isAdmin){
-        this.router.navigate(['/authentification/admin']);
+      if(typeof (Storage) !== 'undefined'){
+        sessionStorage.setItem('User', this.username);
+        if(user.isAdmin){
+          this.router.navigate(['/authentification/admin']);
+        }
+        else{
+          this.router.navigate(['/authentification/user/', this.username ]);
+        }
       }
-      else{
-        this.router.navigate(['/authentification/user/', this.username ]);
-      }
-    }
-      
-  };
+    }    
+  }
 }
 }

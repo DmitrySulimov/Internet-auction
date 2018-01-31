@@ -10,6 +10,7 @@ import {
 import { AuthentificationService } from '../../authentification.service';
 import { Lot } from '../../domain/lot';
 import { LotsService } from '../../lots.service';
+import { UtilityService } from '../../utility.service';
 
 @Component({
   selector: 'app-user',
@@ -34,13 +35,18 @@ export class UserComponent implements OnInit {
   };
 
 
-  constructor(private authentificationService: AuthentificationService, private router: Router, private route: ActivatedRoute, private lotsService:  LotsService) {
+  constructor(private authentificationService: AuthentificationService, private router: Router, private route: ActivatedRoute, private lotsService:  LotsService, private utility: UtilityService) {
   this.username = this.route.snapshot.params['username'];
    }
 
   ngOnInit() {
   this.getLots();
   this.getUserByName();
+  this.utility.isLogged().then((result: boolean) => {
+      if(!result){
+          this.router.navigate(['/authentification']);
+      }
+    })
   }
 
   getUserByName(){
@@ -72,4 +78,9 @@ export class UserComponent implements OnInit {
 	showLot() : void{
 		this.router.navigate(['/change-lot']);
 	}
+
+  out() {
+  sessionStorage.clear();
+  this.router.navigate(['/authentification']);
+  }
 }

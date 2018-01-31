@@ -10,6 +10,7 @@ import { AuthentificationService } from '../../authentification.service';
 
 import { Lot } from '../../domain/lot';
 import { LotsService } from '../../lots.service';
+import { UtilityService } from '../../utility.service';
 
 
 @Component({
@@ -48,11 +49,16 @@ export class AdminComponent implements OnInit {
 	description: ""
   };
 
-  constructor(private authentificationService: AuthentificationService, private lotsService: LotsService, private router: Router) {}
+  constructor(private authentificationService: AuthentificationService, private lotsService: LotsService, private router: Router, private utility: UtilityService) {}
 
   ngOnInit() {
     this.getUsers();
     this.getLots();
+    this.utility.isLogged().then((result: boolean) => {
+      if(!result){
+          this.router.navigate(['/authentification']);
+      }
+    })
   }
 
 
@@ -92,5 +98,8 @@ export class AdminComponent implements OnInit {
 		this.router.navigate(['/change-lot']);
 	}
 
-
+  out() {
+  sessionStorage.clear();
+  this.router.navigate(['/authentification']);
+  }
 }

@@ -1,5 +1,6 @@
 <clr-tabs>
     <clr-tab>
+
         <button clrTabLink>Account settings</button>
         <ng-template [(clrIfActive)]="accountActive">
             <clr-tab-content>
@@ -33,6 +34,7 @@
                          <input type="text" id="input_currentBalance" placeholder="CurrentBalance" [(ngModel)]="user.currentBalance" size="25">
                     </div>
                           <button class="btn btn-info" (click)="Update()">Update</button>
+
                 </div>
             </clr-tab-content>
         </ng-template>
@@ -70,6 +72,14 @@
                         </clr-dg-cell>
                     </clr-dg-row>
                 </clr-datagrid>
+            </clr-tab-content>
+        </ng-template>
+    </clr-tab>
+
+    <clr-tab>
+        <button clrTabLink (click)="out()">Log out</button>
+        <ng-template [(clrIfActive)]="outActive">
+            <clr-tab-content>
             </clr-tab-content>
         </ng-template>
     </clr-tab>

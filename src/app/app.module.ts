@@ -37,6 +37,7 @@ import { AuthentificationService } from './authentification.service';
 import { LotsService } from './lots.service';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { PagerService } from './pager.service';
+import { UtilityService } from './utility.service';
 import { ChangeLotComponent } from './change-lot/change-lot.component';
 
 
@@ -70,7 +71,7 @@ import { ChangeLotComponent } from './change-lot/change-lot.component';
     SidebarComponent,
     ChangeLotComponent
   ],
-  providers: [AuthentificationService, LotsService, {provide: SWIPER_CONFIG, useValue: DEFAULT_SWIPER_CONFIG}, PagerService ],
+  providers: [AuthentificationService, LotsService, {provide: SWIPER_CONFIG, useValue: DEFAULT_SWIPER_CONFIG}, PagerService, UtilityService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
