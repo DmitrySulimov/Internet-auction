@@ -1,3 +1,30 @@
-<p>
-  change-lot works!
-</p>
+<div class="content">
+	<div>
+		<h1>{{lot.name}}</h1>
+		<swiper class="swiper" [config]="config" [(index)]="index">
+		  <div class="swiper-slide">
+			<img [src]="lot.img[0]">
+		  </div>
+		  <div class="swiper-slide">
+			<img [src]="lot.img[1]">
+		  </div>
+		  <div class="swiper-slide">
+			<img [src]="lot.img[2]">
+		  </div>
+		</swiper>
+		<div>
+			<p>Id: <span>{{lot.id}}</span></p>
+			<label for="name" >Name</label>
+			<input type="text" id="name" placeholder="Name" size="25" [(ngModel)]="lot.name">
+			<p>Current price: <span>{{lot.currentPrice}}</span></p>
+			<label for="category">Category</label>
+			<input type="text" id="category" placeholder="category" size="25" [(ngModel)]="lot.category">
+			<label for="subcategory">Sub Category</label>
+			<input type="text" id="subcategory" placeholder="subcategory" size="25" [(ngModel)]="lot.subCategory">
+			<p>Customer: <span>{{lot.customer}}</span></p>
+			<p>Days to finish: <span>{{lot.finishDate}}</span></p>
+			<textarea>{{lot.description}}</textarea>
+			<button class="btn btn-success" (click)="Update()">Update</button>
+		</div>
+	</div>
+</div>

@@ -27,23 +27,29 @@ export class LotsService {
 	 };
 
 
-   getHotLots (): Observable<Lot[]>{
+  getHotLots (): Observable<Lot[]>{
    return this.http.get<Lot[]>(this.lotsUrl);
    };
 
 
+   getLot(id: number): Observable<Lot> {
+      const url = `${this.lotsUrl}/${id}`;
+   return this.http.get<Lot>(url);
+   };
 
   addLot (lot: Lot): Observable<Lot> {
 	  return this.http.post<Lot>(this.lotsUrl, lot, httpOptions);
-	  };
+	};
 
 
+  updateLot (lot: Lot): Observable<any> {
+    return this.http.put(this.lotsUrl, lot, httpOptions);
+  }
 
   deleteLot (lot: Lot | number): Observable<Lot> {
   const id = typeof lot === 'number' ? lot : lot.id;
   const url = `${this.lotsUrl}/${id}`;
-
-  return this.http.delete<Lot>(url, httpOptions)
+  return this.http.delete<Lot>(url, httpOptions);
   };
 
 

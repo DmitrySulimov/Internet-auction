@@ -93,7 +93,7 @@
                         <clr-dg-cell>{{lot.category}}</clr-dg-cell>
                         <clr-dg-cell>{{lot.subCategory}}</clr-dg-cell>
                         <clr-dg-cell>
-                            <button class="btn btn-info" (click)="showLot()">Show</button>
+                            <button class="btn btn-info" [routerLink]="['/change-lot', lot.id]">Change</button>
                             <button class="btn btn-danger" (click)="deleteLot(lot)">Delete</button>
                         </clr-dg-cell>
                     </clr-dg-row>

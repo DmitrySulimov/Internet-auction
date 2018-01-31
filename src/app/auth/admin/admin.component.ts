@@ -93,11 +93,7 @@ export class AdminComponent implements OnInit {
  	 this.lots = this.lots.filter(h => h !== lot);
 	 this.lotsService.deleteLot(lot).subscribe();
 	}
-
-	showLot() : void{
-		this.router.navigate(['/change-lot']);
-	}
-
+  
   out() {
   sessionStorage.clear();
   this.router.navigate(['/authentification']);
