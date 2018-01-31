@@ -42,7 +42,7 @@ export class AuthentificationComponent implements OnInit {
         this.router.navigate(['/authentification/admin']);
       }
       else{
-        this.router.navigate(['/authentification/user']);
+        this.router.navigate(['/authentification/user/', this.username ]);
       }
     }
       

@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'lots/detail/{lot.id}', component: SelectedLotComponent },
   { path: 'authentification', component: AuthentificationComponent },
   { path: 'authentification/registration', component: RegistrationComponent },
-  { path: 'authentification/user', component: UserComponent },
+  { path: 'authentification/user/:username', component: UserComponent },
   { path: 'authentification/admin', component: AdminComponent }
 ];
 

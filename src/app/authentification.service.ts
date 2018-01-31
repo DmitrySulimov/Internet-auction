@@ -30,6 +30,11 @@ export class AuthentificationService {
   	 return this.http.get<User>(url);
 	}
 
+	getUserByName(username: string): Observable<User> {
+ 	 const url = `${this.usersUrl}/?username=${username}`;
+  	 return this.http.get<User>(url);
+	}
+
 	updateUser (user: User): Observable<any> {
 	  return this.http.put(this.usersUrl, user, httpOptions);
 	}

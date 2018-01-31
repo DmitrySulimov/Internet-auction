@@ -1,36 +1,75 @@
 <clr-tabs>
     <clr-tab>
-        <button clrTabLink>Dashboard</button>
-        <ng-template [(clrIfActive)]="dashboardActive">
+        <button clrTabLink>Account settings</button>
+        <ng-template [(clrIfActive)]="accountActive">
             <clr-tab-content>
-                ...
+                <div class="inputs">
+                    <div>
+                        <label for="input_username">Username</label>
+                         <input type="text" id="input_username" placeholder="Username" [(ngModel)]="user.username" size="25">
+                    </div>
+                    <div>
+                         <label for="input_firstname">Firstname</label>
+                         <input type="text" id="input_firstname" placeholder="Firstname" [(ngModel)]="user.firstname" size="25">
+                    </div>
+                    <div>
+                         <label for="input_lastname">Lastname</label>
+                         <input type="text" id="input_lastname" placeholder="Lastname"  [(ngModel)]="user.lastname"  size="25">
+                    </div>
+                    <div>
+                         <label for="input_email">Email</label>
+                         <input type="text" id="input_email" placeholder="Email" [(ngModel)]="user.email"   size="25">
+                    </div>
+                    <div>
+                         <label for="input_password">Password</label>
+                         <input type="text" id="input_password" placeholder="Password" [(ngModel)]="user.phone"  size="25">
+                    </div>
+                    <div>
+                         <label for="input_phone">Phone</label>
+                         <input type="text" id="input_phone" placeholder="Phone" [(ngModel)]="user.password" size="25">
+                    </div>
+                    <div>
+                         <label for="input_currentBalance">CurrentBalance</label>
+                         <input type="text" id="input_currentBalance" placeholder="CurrentBalance" [(ngModel)]="user.currentBalance" size="25">
+                    </div>
+                          <button class="btn btn-info" (click)="Update()">Update</button>
+                </div>
             </clr-tab-content>
         </ng-template>
     </clr-tab>
 
     <clr-tab>
-        <button clrTabLink>Management</button>
-        <ng-template [(clrIfActive)]="managementActive">
+        <button clrTabLink>Our lots</button>
+        <ng-template [(clrIfActive)]="lotsActive">
             <clr-tab-content>
-                ...
-            </clr-tab-content>
-        </ng-template>
-    </clr-tab>
+                <clr-datagrid>
+                    <clr-dg-column>Lot ID</clr-dg-column>
+                    <clr-dg-column [clrDgField]="'name'">Name</clr-dg-column>
+                    <clr-dg-column [clrDgField]="'currentPrice'">Current Price</clr-dg-column>
+                    <clr-dg-column [clrDgField]="'lastPrice'">Last Price</clr-dg-column>
+                    <clr-dg-column [clrDgField]="'customer'">Customer</clr-dg-column>
+                    <clr-dg-column [clrDgField]="'totalCustomers'">Total Customers</clr-dg-column>
+                    <clr-dg-column [clrDgField]="'finishDate'">Finish date</clr-dg-column>
+                    <clr-dg-column [clrDgField]="'category'">Category</clr-dg-column>
+                    <clr-dg-column [clrDgField]="'subCategory'">Sub Category</clr-dg-column>
+                    <clr-dg-column >Events</clr-dg-column>
 
-    <clr-tab>
-        <button clrTabLink>Cloud</button>
-        <ng-template [(clrIfActive)]="cloudActive">
-            <clr-tab-content>
-                ...
-            </clr-tab-content>
-        </ng-template>
-    </clr-tab>
-
-    <clr-tab>
-        <button clrTabLink>Infrastructure</button>
-        <ng-template [(clrIfActive)]="infrastructureActive">
-            <clr-tab-content>
-                ...
+                    <clr-dg-row *clrDgItems="let lot of lots">
+                        <clr-dg-cell>{{lot.id}}</clr-dg-cell>
+                        <clr-dg-cell>{{lot.name}}</clr-dg-cell>
+                        <clr-dg-cell>{{lot.currentPrice}}</clr-dg-cell>
+                        <clr-dg-cell>{{lot.lastPrice}}</clr-dg-cell>
+                        <clr-dg-cell>{{lot.customer}}</clr-dg-cell>
+                        <clr-dg-cell>{{lot.totalCustomers}}</clr-dg-cell>
+                        <clr-dg-cell>{{lot.finishDate}}</clr-dg-cell>
+                        <clr-dg-cell>{{lot.category}}</clr-dg-cell>
+                        <clr-dg-cell>{{lot.subCategory}}</clr-dg-cell>
+                        <clr-dg-cell>
+                            <button class="btn btn-info" (click)="showLot()">Show</button>
+                            <button class="btn btn-danger" (click)="deleteLot(lot)">Delete</button>
+                        </clr-dg-cell>
+                    </clr-dg-row>
+                </clr-datagrid>
             </clr-tab-content>
         </ng-template>
     </clr-tab>
