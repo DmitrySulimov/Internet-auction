@@ -1,3 +1,27 @@
-<p>
-  selected-lot works!
-</p>
+<div class="content">
+	<div>
+		<h1>{{lot.name}}</h1>
+		<swiper class="swiper" [config]="config" [(index)]="index">
+		  <div class="swiper-slide">
+			<img [src]="lot.img[0]">
+		  </div>
+		  <div class="swiper-slide">
+			<img [src]="lot.img[1]">
+		  </div>
+		  <div class="swiper-slide">
+			<img [src]="lot.img[2]">
+		  </div>
+		</swiper>
+		<div>
+			<p>Id: <span>{{lot.id}}</span></p>
+			<p>Name: <span>{{lot.name}}</span></p>
+			<p>Current price: <span>{{lot.currentPrice}}</span></p>
+			<p>Category: <span>{{lot.category}}</span></p>
+			<p>Sub Category: <span>{{lot.subCategory}}</span></p>
+			<p>Customer: <span>{{lot.customer}}</span></p>
+			<p>Days to finish: <span>{{lot.finishDate}}</span></p>
+			<textarea>{{lot.description}}</textarea>
+			<button class="btn btn-info" (click)="Back()">Go back</button>
+		</div>
+	</div>
+</div>

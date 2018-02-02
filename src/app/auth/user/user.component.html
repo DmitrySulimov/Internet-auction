@@ -77,10 +77,21 @@
     </clr-tab>
 
     <clr-tab>
+        <button clrTabLink (click)="addLot()">New lot</button>
+        <ng-template [(clrIfActive)]="outActive">
+            <clr-tab-content>
+            </clr-tab-content>
+        </ng-template>
+    </clr-tab>
+
+    <clr-tab>
         <button clrTabLink (click)="out()">Log out</button>
         <ng-template [(clrIfActive)]="outActive">
             <clr-tab-content>
             </clr-tab-content>
         </ng-template>
     </clr-tab>
+
+    
+
 </clr-tabs>

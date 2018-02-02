@@ -35,5 +35,11 @@ export class HomePageComponent implements OnInit {
     .subscribe((lots)=> { 
     	this.lots = (lots as Lot[]).sort((objA, objB) => objB.totalCustomers - objA.totalCustomers).slice(0,9);
     })
-} 
+  }
+
+  deleteLot(lot: Lot): void {
+   this.lots = this.lots.filter(h => h !== lot);
+   this.lotsService.deleteLot(lot).subscribe();
+   this.router.navigate(['/home']);
+  } 
 }

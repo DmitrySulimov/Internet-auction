@@ -30,7 +30,6 @@ export class AuthentificationComponent implements OnInit {
     this.utility.isLogged().then((result: boolean) => {
       if(result){
         if(sessionStorage.getItem('User') === 'admin'){
-        console.log('trouble');
           this.router.navigate(['/authentification/admin']);
         }
         else{

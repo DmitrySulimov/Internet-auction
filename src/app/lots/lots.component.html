@@ -5,8 +5,8 @@
 		<div class="lot_img"  [ngStyle]="{'background-image': 'url(' + lot.img[0] + ')'}"></div>
 		<p class="price">Цена - {{lot.currentPrice}} uah</p>
 		<div class="buttons">
-			<button class="btn btn-block btn-primary" routerLink="lots/detail/{lot.id}">more</button>
-			<button class="btn btn-block btn-success">raise</button> 
+			<button class="btn btn-block btn-primary" [routerLink]="['/selected-lot', lot.id]">more</button>
+			<button class="btn btn-block btn-success" (click)="deleteLot(lot)" >buy</button> 
 		</div>
 	</div>	
 </div>

@@ -48,4 +48,10 @@ export class LotsComponent implements OnInit {
         // get current page of items
         this.pagedItems = this.lots.slice(this.pager.startIndex, this.pager.endIndex + 1);
     }
+
+  deleteLot(lot: Lot): void {
+   this.lots = this.lots.filter(h => h !== lot);
+   this.lotsService.deleteLot(lot).subscribe();
+   this.router.navigate(['/lots']);
+  }
 }

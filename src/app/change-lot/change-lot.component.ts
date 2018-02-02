@@ -53,6 +53,7 @@ export class ChangeLotComponent implements OnInit {
   Update(): void {
    this.lotsService.updateLot(this.lot)
      .subscribe();
+    this.router.navigate(['/authentification']);
  }
 
 }

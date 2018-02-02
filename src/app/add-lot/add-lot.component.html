@@ -1,0 +1,26 @@
+<div class="content">
+	<div>
+		<h1>Add new lot</h1>
+		<div>
+
+			<label for="id" >Id</label>
+			<input type="text" id="id" placeholder="id" size="25" [(ngModel)]="emptyLot.id">
+			<label for="name" >Name</label>
+			<input type="text" id="name" placeholder="Name" size="25" [(ngModel)]="emptyLot.name">
+			<label for="img">Add images</label>
+			<input type="file" name="img" multiple>
+			<label for="price" >Current price</label>
+			<input type="text" id="price" placeholder="price" size="25" [(ngModel)]="emptyLot.currentPrice">
+			<label for="category">Category</label>
+			<input type="text" id="category" placeholder="category" size="25" [(ngModel)]="emptyLot.category">
+			<label for="subcategory">Sub Category</label>
+			<input type="text" id="subcategory" placeholder="subcategory" size="25" [(ngModel)]="emptyLot.subCategory">
+			<label for="customer" >Customer</label>
+			<input type="text" id="customer" placeholder="customer" size="25" [(ngModel)]="emptyLot.customer">
+			<label for="finish" >Days to finish:</label>
+			<input type="text" id="finish" placeholder="finish" size="25" [(ngModel)]="emptyLot.finishDate">
+			<textarea [(ngModel)]="emptyLot.description"></textarea>
+			<button class="btn btn-success" (click)="add()">Add</button>
+		</div>
+	</div>
+</div>

@@ -11,14 +11,16 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { RegistrationComponent } from './auth/registration/registration.component';
 import { AuthentificationComponent } from './auth/authentification/authentification.component';
 import { ChangeLotComponent } from './change-lot/change-lot.component';
+import { AddLotComponent } from './add-lot/add-lot.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomePageComponent },
   { path: 'contacts', component: ContactsComponent },
   { path: 'change-lot/:id', component: ChangeLotComponent },
+  { path: 'add-lot', component: AddLotComponent },
   { path: 'lots', component: LotsComponent },
-  { path: 'lots/detail/:id', component: SelectedLotComponent },
+  { path: 'selected-lot/:id', component: SelectedLotComponent },
   { path: 'authentification', component: AuthentificationComponent },
   { path: 'authentification/registration', component: RegistrationComponent },
   { path: 'authentification/user/:username', component: UserComponent },

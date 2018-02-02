@@ -83,4 +83,9 @@ export class UserComponent implements OnInit {
   sessionStorage.clear();
   this.router.navigate(['/authentification']);
   }
+
+  
+  addLot(){
+    this.router.navigate(['/add-lot']);
+  }
 }

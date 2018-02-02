@@ -39,6 +39,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { PagerService } from './pager.service';
 import { UtilityService } from './utility.service';
 import { ChangeLotComponent } from './change-lot/change-lot.component';
+import { AddLotComponent } from './add-lot/add-lot.component';
 
 
 @NgModule({
@@ -69,7 +70,8 @@ import { ChangeLotComponent } from './change-lot/change-lot.component';
     RegistrationComponent,
     AuthentificationComponent,
     SidebarComponent,
-    ChangeLotComponent
+    ChangeLotComponent,
+    AddLotComponent
   ],
   providers: [AuthentificationService, LotsService, {provide: SWIPER_CONFIG, useValue: DEFAULT_SWIPER_CONFIG}, PagerService, UtilityService ],
   bootstrap: [AppComponent]
