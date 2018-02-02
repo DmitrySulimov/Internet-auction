@@ -8,7 +8,7 @@
 			<label for="name" >Name</label>
 			<input type="text" id="name" placeholder="Name" size="25" [(ngModel)]="emptyLot.name">
 			<label for="img">Add images</label>
-			<input type="file" name="img" multiple>
+			<input type="file" name="img" [(ngModel)]="emptyLot.img[0]">
 			<label for="price" >Current price</label>
 			<input type="text" id="price" placeholder="price" size="25" [(ngModel)]="emptyLot.currentPrice">
 			<label for="category">Category</label>

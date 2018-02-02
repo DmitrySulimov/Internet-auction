@@ -1,16 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400i');
-.application{
-	display: grid;
-	grid-template-rows: 60px 1fr 80px;
-}
 .main{
 	display: grid;
 	grid-template-columns: 1fr;
-}
-.sidebar_menu{
-	border-right: solid 1px  #002538;
-	border-bottom: solid 1px  #002538;
-	padding: 5px;
 }
 .header-6{
 	position: fixed;
@@ -28,14 +19,10 @@ app-sidebar{
 	width: 300px;
 	background-color: white;
 }
-app-authentification{
-	grid-area: 1 / 2 / 2 / 3;
-}
-app-contacts{
-	grid-area: 1 / 1 / 2 / 4;
-}
 .content{
-	margin: 75px;
+	margin-top: 75px;
+	margin-left: 10px;
+	margin-right: 20px;
 }
 .time{
 	margin-left: 50px;

@@ -51,6 +51,7 @@ export class AddLotComponent implements OnInit {
   		.subscribe((lot) => {
   			   this.lots.push(lot);
   			   this.emptyLot;
+           console.log(this.emptyLot);
   			   this.router.navigate(['/authentification']);
       });   
 

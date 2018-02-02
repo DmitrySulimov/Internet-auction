@@ -15,18 +15,11 @@ import 'clarity-icons/shapes/commerce-shapes';
 })
 export class AppComponent implements OnInit {
   title = 'app';
-  boo: boolean = false;
   date = moment().format('MM-DD-YYYY');
 
   constructor() { }
 
   ngOnInit() {
-  }
-
-  select() {
-
-  this.boo = !this.boo;
-  return this.boo;
   }
 
 }

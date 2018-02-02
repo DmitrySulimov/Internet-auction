@@ -1,10 +1,5 @@
 <div class="application">
     <header class="header-6">
-           <div class="header-nav">
-                <a (click)="select()" class="nav-link nav-icon">
-                    <clr-icon shape="bars"></clr-icon>
-                </a>
-            </div>
         <div class="branding">
             <a routerLink="home" class="nav-link">
                 <clr-icon shape="savings"></clr-icon>
@@ -37,7 +32,6 @@
         </div>
     </header>
     <section  id="mainSection" class="main">
-        <app-sidebar *ngIf="boo" class="sidebar_menu"></app-sidebar>
         <div class="content">
             <router-outlet></router-outlet>
         </div>

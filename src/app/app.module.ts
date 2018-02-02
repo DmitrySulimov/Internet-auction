@@ -35,7 +35,6 @@ import { RegistrationComponent } from './auth/registration/registration.componen
 import { AuthentificationComponent } from './auth/authentification/authentification.component';
 import { AuthentificationService } from './authentification.service';
 import { LotsService } from './lots.service';
-import { SidebarComponent } from './sidebar/sidebar.component';
 import { PagerService } from './pager.service';
 import { UtilityService } from './utility.service';
 import { ChangeLotComponent } from './change-lot/change-lot.component';
@@ -69,7 +68,6 @@ import { AddLotComponent } from './add-lot/add-lot.component';
     HomePageComponent,
     RegistrationComponent,
     AuthentificationComponent,
-    SidebarComponent,
     ChangeLotComponent,
     AddLotComponent
   ],
